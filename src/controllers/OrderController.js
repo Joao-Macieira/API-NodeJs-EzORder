@@ -43,6 +43,23 @@ class OrderController {
       response.status(500).json({ errors: 'Status inválido' });
     }
   }
+
+  async status(request, response) {
+    response.json([
+      {
+        _id: 'PENDING',
+        name: 'Pendente',
+      },
+      {
+        _id: 'PREPARING',
+        name: 'Preparando',
+      },
+      {
+        _id: 'DONE',
+        name: 'Finalizado',
+      },
+    ]);
+  }
 }
 
 module.exports = new OrderController();
